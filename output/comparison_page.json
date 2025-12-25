@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "generated_by": "Kasparro Auto-Agent",
+    "version": "1.0",
+    "content_type": "application/json"
+  },
+  "data": {
+    "page_header": "GlowBoost Vitamin C Serum vs. DermaGlow Generic Serum",
+    "buying_guide_verdict": "Better Value",
+    "comparison_tables": {
+      "price_comparison": {
+        "our_price": 699.0,
+        "competitor_price": 899.0,
+        "details": {
+          "difference": -200.0,
+          "verdict": "Better Value",
+          "message": "Save 200.0 compared to competitor"
+        }
+      },
+      "ingredient_overlap": {
+        "common_ingredients": [
+          "vitamin c"
+        ],
+        "our_unique_advantages": [
+          "hyaluronic acid"
+        ],
+        "competitor_ingredients": [
+          "phenoxyethanol",
+          "water",
+          "vitamin c",
+          "glycerin"
+        ]
+      },
+      "benefit_comparison": {
+        "us": [
+          "Brightening",
+          "Fades dark spots"
+        ],
+        "them": [
+          "Basic Hydration",
+          "Mild Brightening"
+        ]
+      }
+    },
+    "disclaimer": "Competitor data is simulated for demonstration purposes."
+  }
+}

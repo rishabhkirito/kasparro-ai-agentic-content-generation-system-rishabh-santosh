@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "generated_by": "Kasparro Auto-Agent",
+    "version": "1.0",
+    "content_type": "application/json"
+  },
+  "data": {
+    "page_title": "Frequently Asked Questions",
+    "description": "Common questions regarding usage, safety, and results.",
+    "sections": [
+      {
+        "category": "Informational",
+        "q_and_a_list": [
+          {
+            "question": "What is the main benefit of GlowBoost Vitamin C Serum?",
+            "answer": "The main benefits are Brightening, Fades dark spots."
+          },
+          {
+            "question": "What is the concentration of active ingredients?",
+            "answer": "It contains 10% Vitamin C."
+          },
+          {
+            "question": "What are the key ingredients?",
+            "answer": "It features Vitamin C, Hyaluronic Acid."
+          },
+          {
+            "question": "Is this a serum or a cream?",
+            "answer": "This is a serum formulation."
+          },
+          {
+            "question": "Can I use this for dull skin?",
+            "answer": "Yes, it is designed for: Brightening, Fades dark spots"
+          }
+        ]
+      },
+      {
+        "category": "Usage",
+        "q_and_a_list": [
+          {
+            "question": "How do I apply this product?",
+            "answer": "Apply 2-3 drops in the morning before sunscreen"
+          },
+          {
+            "question": "Can I use this in the morning?",
+            "answer": "Yes, Apply 2-3 drops in the morning before sunscreen"
+          },
+          {
+            "question": "How many drops should I use?",
+            "answer": "Please apply 2-3 drops as directed."
+          },
+          {
+            "question": "Do I need sunscreen after using this?",
+            "answer": "Yes, it is recommended to apply before sunscreen."
+          },
+          {
+            "question": "Can I layer this with other products?",
+            "answer": "Always apply thinnest to thickest. This serum goes first."
+          }
+        ]
+      },
+      {
+        "category": "Safety",
+        "q_and_a_list": [
+          {
+            "question": "Are there any side effects?",
+            "answer": "Mild tingling for sensitive skin"
+          },
+          {
+            "question": "Is this safe for sensitive skin?",
+            "answer": "Please note: Mild tingling for sensitive skin"
+          },
+          {
+            "question": "Will this cause tingling?",
+            "answer": "You may experience mild tingling for sensitive skin"
+          },
+          {
+            "question": "Is GlowBoost Vitamin C Serum suitable for Oily skin?",
+            "answer": "Yes, it is formulated for this skin type."
+          },
+          {
+            "question": "Is it non-comedogenic?",
+            "answer": "It is formulated for Oily, Combination"
+          }
+        ]
+      },
+      {
+        "category": "Purchase",
+        "q_and_a_list": [
+          {
+            "question": "What is the price?",
+            "answer": "INR 699.0"
+          },
+          {
+            "question": "Is this affordable?",
+            "answer": "At INR 699.0, it is competitively priced containing 10% Vitamin C."
+          }
+        ]
+      },
+      {
+        "category": "Comparison",
+        "q_and_a_list": [
+          {
+            "question": "Why choose this over others?",
+            "answer": "It offers 10% Vitamin C and Vitamin C for enhanced results."
+          }
+        ]
+      }
+    ]
+  }
+}

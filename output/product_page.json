@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "generated_by": "Kasparro Auto-Agent",
+    "version": "1.0",
+    "content_type": "application/json"
+  },
+  "data": {
+    "hero_section": {
+      "product_title": "GlowBoost Vitamin C Serum",
+      "price_display": "INR 699.0",
+      "availability": "In Stock"
+    },
+    "product_details": {
+      "concentration": "10% Vitamin C",
+      "key_benefits": [
+        "Brightening",
+        "Fades dark spots"
+      ],
+      "ingredients": [
+        "Vitamin C",
+        "Hyaluronic Acid"
+      ]
+    },
+    "instruction_manual": {
+      "heading": "How to Use",
+      "instructions": [
+        "Apply 2-3 drops in the morning before sunscreen"
+      ],
+      "raw_text": "Apply 2-3 drops in the morning before sunscreen"
+    },
+    "safety_information": {
+      "has_safety_warning": true,
+      "warning_text": "Advisory: Mild tingling for sensitive skin",
+      "compatible_skin_types": [
+        "Oily",
+        "Combination"
+      ]
+    }
+  }
+}
