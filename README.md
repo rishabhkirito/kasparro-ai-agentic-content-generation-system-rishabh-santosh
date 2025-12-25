@@ -4,7 +4,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Architecture](https://img.shields.io/badge/Architecture-Agentic%20DAG-orange?style=for-the-badge)](https://en.wikipedia.org/wiki/Multi-agent_system)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)]()
 
 > A modular, deterministic **Multi-Agent System (MAS)** that transforms raw product data into structured, machine-readable e-commerce content—**without LLMs**.
@@ -114,20 +113,8 @@ The agents will log their activities to the console, and 3 files will be generat
 
 ---
 
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
 <div align="center">
 
-Built with ❤️ by **Rishabh Santosh** for the Applied AI Challenge.
+Built by **Rishabh Santosh** for the Applied AI Challenge.
 
 </div>
