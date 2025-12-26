@@ -13,22 +13,29 @@ The system takes unstructured, raw product text as input and employs a shared st
 The system is built on **LangGraph**, utilizing a StateGraph architecture where a shared memory object (`AgentState`) is passed between specialized nodes.
 
 ```mermaid
-graph TD
-    Start((Start)) --> Ingestion
-    Ingestion["📥 Ingestion Agent<br/>(LLM Extraction)"] --> Strategist
-    
-    Strategist["🧠 Strategist Agent<br/>(LLM Creativity)"] --> Logic
-    
-    Logic["⚖️ Logic Engine<br/>(Deterministic Tool)"] --> Assembly
-    
-    Assembly["📝 Assembly Agent<br/>(Formatter)"] --> End((End))
-    
-    subgraph "Shared Memory (AgentState)"
-    Product_Model
-    Competitor_Model
-    Questions_List
-    Analysis_Data
-    end
+classDiagram
+    %% This represents your Pydantic Models
+    class AgentState {
+        +RawInput str
+        +Product product
+        +Competitor competitor
+        +List~Question~ questions
+    }
+
+    class Product {
+        +str name
+        +float price
+        +List~str~ ingredients
+    }
+
+    class Competitor {
+        +str reason_for_creation
+    }
+
+    %% Relationships
+    AgentState *-- Product
+    AgentState *-- Competitor
+    Product <|-- Competitor : Inherits
 ```
 
 ## 3. Core Components
