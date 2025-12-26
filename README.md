@@ -44,13 +44,13 @@ The system operates as a **StateGraph**, passing a shared memory object between 
 ```mermaid
 graph TD
     Start((Start)) --> Ingestion
-    Ingestion[📥 Ingestion Agent<br/>(AI Extraction)] --> Strategist
+    Ingestion["📥 Ingestion Agent<br/>(AI Extraction)"] --> Strategist
     
-    Strategist[🧠 Strategist Agent<br/>(AI Creativity)] --> Logic
+    Strategist["🧠 Strategist Agent<br/>(AI Creativity)"] --> Logic
     
-    Logic[⚖️ Logic Engine<br/>(Deterministic Tool)] --> Assembly
+    Logic["⚖️ Logic Engine<br/>(Deterministic Tool)"] --> Assembly
     
-    Assembly[📝 Assembly Agent<br/>(Formatter)] --> End((End))
+    Assembly["📝 Assembly Agent<br/>(Formatter)"] --> End((End))
 ```
 
 ### Core Components
