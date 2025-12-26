@@ -23,7 +23,7 @@ graph TD
     
     Assembly["📝 Assembly Agent<br/>(Formatter)"] --> End((End))
     
-    subgraph Shared Memory (AgentState)
+    subgraph "Shared Memory (AgentState)"
     Product_Model
     Competitor_Model
     Questions_List
