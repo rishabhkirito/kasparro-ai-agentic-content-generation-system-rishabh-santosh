@@ -15,13 +15,13 @@ The system is built on **LangGraph**, utilizing a StateGraph architecture where 
 ```mermaid
 graph TD
     Start((Start)) --> Ingestion
-    Ingestion[📥 Ingestion Agent<br/>(LLM Extraction)] --> Strategist
+    Ingestion["📥 Ingestion Agent<br/>(LLM Extraction)"] --> Strategist
     
-    Strategist[🧠 Strategist Agent<br/>(LLM Creativity)] --> Logic
+    Strategist["🧠 Strategist Agent<br/>(LLM Creativity)"] --> Logic
     
-    Logic[⚖️ Logic Engine<br/>(Deterministic Tool)] --> Assembly
+    Logic["⚖️ Logic Engine<br/>(Deterministic Tool)"] --> Assembly
     
-    Assembly[📝 Assembly Agent<br/>(Formatter)] --> End((End))
+    Assembly["📝 Assembly Agent<br/>(Formatter)"] --> End((End))
     
     subgraph Shared Memory (AgentState)
     Product_Model
