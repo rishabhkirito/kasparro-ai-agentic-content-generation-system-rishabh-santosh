@@ -4,7 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Framework](https://img.shields.io/badge/Orchestrator-LangGraph-orange?style=for-the-badge)](https://langchain-ai.github.io/langgraph/)
-[![AI Model](https://img.shields.io/badge/AI-Gemini%201.5%20Pro-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
+[![AI Model](https://img.shields.io/badge/AI-Gemini%202.5%20Pro-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
 [![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://github.com/your-username/kasparro)
 
 > A state-of-the-art **Generative Multi-Agent System (MAS)** that uses LangGraph to orchestrate autonomous AI agents for structured content generation.
@@ -17,7 +17,7 @@
 
 ## 🚀 Overview
 
-**Kasparro AI** is an advanced engineering solution for the "Applied AI Engineer Challenge." Unlike simple scripts, this system utilizes a **Directed Acyclic Graph (DAG)** of cognitive agents powered by **Google Gemini 1.5**.
+agents powered by **Google Gemini 2.5**.
 
 It autonomously transforms raw, messy product data into high-value marketing assets by:
 1.  **Thinking:** Inventing realistic competitor products based on market context.
@@ -31,7 +31,7 @@ It autonomously transforms raw, messy product data into high-value marketing ass
 | Feature | Description |
 | :--- | :--- |
 | **🤖 Agentic Orchestration** | Powered by **LangGraph**, enabling state-driven workflows and complex agent handovers. |
-| **🧠 Generative Reasoning** | Uses **Gemini 1.5 Pro** to hallucinate creative assets (Competitors) and answer nuanced queries. |
+| **🧠 Generative Reasoning** | Uses **Gemini 2.5 Pro** to hallucinate creative assets (Competitors) and answer nuanced queries. |
 | **⚖️ Hybrid Logic** | Combines **LLM Creativity** with **Deterministic Tools** (Math/Set operations) for verifiable accuracy. |
 | **🔒 Strict Validation** | Enforces 100% machine-readable JSON output using **Pydantic** parsers. |
 
