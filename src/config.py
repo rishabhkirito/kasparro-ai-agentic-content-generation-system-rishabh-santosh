@@ -1,1 +1,0 @@
-# Configuration (constants, regex patterns)

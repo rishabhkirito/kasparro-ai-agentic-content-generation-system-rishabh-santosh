@@ -1,14 +1,15 @@
 <div align="center">
 
-# 🦜 Kasparro AI Agentic Content Generation System
+# 🦜 Kasparro AI: Generative Agentic System
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Architecture](https://img.shields.io/badge/Architecture-Agentic%20DAG-orange?style=for-the-badge)](https://en.wikipedia.org/wiki/Multi-agent_system)
-[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)]()
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Framework](https://img.shields.io/badge/Orchestrator-LangGraph-orange?style=for-the-badge)](https://langchain-ai.github.io/langgraph/)
+[![AI Model](https://img.shields.io/badge/AI-Gemini%201.5%20Pro-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
+[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://github.com/your-username/kasparro)
 
-> A modular, deterministic **Multi-Agent System (MAS)** that transforms raw product data into structured, machine-readable e-commerce content—**without LLMs**.
+> A state-of-the-art **Generative Multi-Agent System (MAS)** that uses LangGraph to orchestrate autonomous AI agents for structured content generation.
 
-[View Documentation](docs/projectdocumentation.md) · [Report Bug](issues) · [Request Feature](issues)
+[View Documentation](docs/projectdocumentation.md) · [Report Bug](https://github.com/your-username/kasparro/issues) · [Request Feature](https://github.com/your-username/kasparro/issues)
 
 </div>
 
@@ -16,12 +17,12 @@
 
 ## 🚀 Overview
 
-**Kasparro** is an engineering solution designed to solve the challenge of autonomous content generation with absolute reliability. Unlike probabilistic LLM-based approaches, Kasparro uses a **deterministic pipeline** of specialized agents and logic blocks to ensure 100% hallucination-free output.
+**Kasparro AI** is an advanced engineering solution for the "Applied AI Engineer Challenge." Unlike simple scripts, this system utilizes a **Directed Acyclic Graph (DAG)** of cognitive agents powered by **Google Gemini 1.5**.
 
-It autonomously orchestrates the ingestion, strategy, and assembly of:
-- **📝 FAQ Pages** (Categorized & Contextual)
-- **🛍️ Product Landing Pages** (Structured Metadata & Usage Specs)
-- **⚖️ Comparison Pages** (Value Analysis vs. Synthetic Competitors)
+It autonomously transforms raw, messy product data into high-value marketing assets by:
+1.  **Thinking:** Inventing realistic competitor products based on market context.
+2.  **Reasoning:** Generating context-aware FAQ answers (e.g., dermatological advice).
+3.  **Verifying:** Grounding AI hallucinations with deterministic logic tools.
 
 ---
 
@@ -29,52 +30,51 @@ It autonomously orchestrates the ingestion, strategy, and assembly of:
 
 | Feature | Description |
 | :--- | :--- |
-| **🚫 No-LLM Architecture** | Relies on pure logic blocks for deterministic, safe, and verifiable results. |
-| **🧠 Intelligent Logic** | "Muscles" that perform real-time math (Price Value Analysis) and semantic rule-checking. |
-| **🧩 Modular Design** | Strict separation of concerns: **Agents** (Workflow) vs. **Logic** (Transformation) vs. **Templates** (Presentation). |
-| **🔄 DAG Pipeline** | Unidirectional data flow: `Ingestion` → `Market Strategy` → `Content Assembly`. |
+| **🤖 Agentic Orchestration** | Powered by **LangGraph**, enabling state-driven workflows and complex agent handovers. |
+| **🧠 Generative Reasoning** | Uses **Gemini 1.5 Pro** to hallucinate creative assets (Competitors) and answer nuanced queries. |
+| **⚖️ Hybrid Logic** | Combines **LLM Creativity** with **Deterministic Tools** (Math/Set operations) for verifiable accuracy. |
+| **🔒 Strict Validation** | Enforces 100% machine-readable JSON output using **Pydantic** parsers. |
 
 ---
 
 ## 🛠️ System Architecture
 
-The system operates on a 3-stage pipeline model:
+The system operates as a **StateGraph**, passing a shared memory object between nodes:
 
 ```mermaid
-graph LR
-    A[📄 Raw Text] --> B(📥 Ingestion Agent)
-    B --> C{🧠 Strategist Agent}
-    C --> D[🛠️ Product Agent]
-    C --> E[❓ FAQ Agent]
-    D --> F[📄 Product JSON]
-    D --> G[📊 Comparison JSON]
-    E --> H[📑 FAQ JSON]
+graph TD
+    Start((Start)) --> Ingestion
+    Ingestion[📥 Ingestion Agent<br/>(AI Extraction)] --> Strategist
+    
+    Strategist[🧠 Strategist Agent<br/>(AI Creativity)] --> Logic
+    
+    Logic[⚖️ Logic Engine<br/>(Deterministic Tool)] --> Assembly
+    
+    Assembly[📝 Assembly Agent<br/>(Formatter)] --> End((End))
 ```
 
 ### Core Components
 
-- **Ingestion Agent**: Parses unstructured input into typed `Product` models.
-- **Strategist Agent**: Generates synthetic competitors and user-centric questions.
-- **Fx Blocks ("Muscles")**:
-  - `calculate_price_diff`: Determines value propositions (e.g., "Premium" vs. "Better Value").
-  - `generate_safety_warning`: Scans ingredients/side-effects for mandatory advisories.
+- **Ingestion Agent**: Uses LLM to extract strict entities from unstructured text.
+- **Strategist Agent**: Uses high-temperature AI calls to invent competitors and brainstorm user personas.
+- **Logic Engine**: A deterministic node that performs math (Price Delta) and set operations (Ingredient Overlap) to ground the AI.
+- **Assembly Agent**: Compiles the final shared state into production-ready JSON.
 
 ---
 
 ## 📂 Repository Structure
 
-```sh
+```bash
 kasparro-system/
 ├── docs/
 │   └── projectdocumentation.md   # 📘 Detailed System Design
 ├── output/                       # 📤 Generated content (JSON)
 ├── src/
-│   ├── agents/                   # 🤖 Autonomous workers
-│   ├── blocks/                   # 🧠 Logic units (Math/Text)
-│   ├── templates/                # 📏 Output schemas
-│   ├── config.py                 # ⚙️ Configuration
-│   └── models.py                 # 📦 Data Classes
-└── main.py                       # 🎬 Orchestrator
+│   ├── agents.py                 # 🤖 AI Nodes (Ingestion, Strategist, Assembly)
+│   ├── logic_tools.py            # 🧠 Deterministic Math Tools
+│   └── models.py                 # 📦 Pydantic Data Schemas
+├── main.py                       # 🎬 LangGraph Orchestrator
+└── requirements.txt              # 📦 Dependencies
 ```
 
 ---
@@ -83,22 +83,33 @@ kasparro-system/
 
 ### Prerequisites
 
-- **Python 3.8+**
-- Standard Library only (No heavy dependencies required).
+- **Python 3.10+**
+- **Google Gemini API Key**
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/kasparro.git
+Clone the repository:
 
-# Navigate to the project directory
-cd kasparro
+```bash
+git clone https://github.com/rishabhkirito/kasparro-ai-agentic-content-generation-system-rishabh-santosh.git
+cd kasparro-ai-agentic-content-generation-system-rishabh-santosh
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Set up your API Key: Create a `.env` file in the root directory:
+
+```env
+GOOGLE_API_KEY=your_actual_api_key_here
 ```
 
 ### Usage
 
-Run the main orchestration script:
+Run the graph orchestration script:
 
 ```bash
 python main.py
@@ -106,15 +117,16 @@ python main.py
 
 ### Expected Output
 
-The agents will log their activities to the console, and 3 files will be generated in the `output/` directory:
-1. `faq.json`
-2. `product_page.json`
-3. `comparison_page.json`
+The system will visualize the graph execution flow in the console and generate 3 files in `output/`:
+
+1.  `faq.json` (Context-aware Q&A)
+2.  `product_page.json` (Cleaned Data)
+3.  `comparison_page.json` (AI-Generated Competitor Analysis)
 
 ---
 
 <div align="center">
 
-Built by **Rishabh Santosh** for the Applied AI Challenge.
+Built by **Rishabh Santosh** · Powered by **LangGraph** & **Gemini**.
 
 </div>

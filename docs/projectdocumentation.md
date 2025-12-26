@@ -1,81 +1,81 @@
 # System Design Document: Kasparro AI Agentic Content Generation System
 
 ## 1. System Overview
-The **Kasparro AI Agentic Content Generation System** is a modular, agent-based framework designed to automatically generate high-quality e-commerce content. It takes unstructured product data as input and produces structured, ready-to-deploy JSON content for Product Landing Pages, Comparison Pages, and FAQ sections.
+The **Kasparro AI Agentic Content Generation System** is an advanced, generative framework designed to autonomously create high-quality e-commerce content. Unlike simple template-based scripts, this system utilizes a **Directed Acyclic Graph (DAG)** of cognitive agents powered by **Google Gemini 1.5 Pro**.
 
-The system emphasizes **modularity**, **reusability**, and **separation of concerns** by dividing responsibilities among specialized Agents, reusable Logic Blocks, and strict Output Templates.
+The system takes unstructured, raw product text as input and employs a shared state machine to orchestrate complex tasks:
+1.  **Thinking:** Inventing realistic competitor products based on market context.
+2.  **Reasoning:** Generating context-aware FAQ answers (e.g., specific dermatological advice).
+3.  **Verifying:** Grounding AI hallucinations with deterministic logic tools.
 
-## 2. Architecture
+## 2. Architecture (LangGraph DAG)
 
-The system follows a pipeline architecture where data flows through a series of specialized agents.
+The system is built on **LangGraph**, utilizing a StateGraph architecture where a shared memory object (`AgentState`) is passed between specialized nodes.
 
 ```mermaid
 graph TD
-    Input[Raw Text Input] --> Ingestion[Data Ingestion Agent]
-    Ingestion --> ProductModel[Product Data Model]
+    Start((Start)) --> Ingestion
+    Ingestion[📥 Ingestion Agent<br/>(LLM Extraction)] --> Strategist
     
-    ProductModel --> Strategist[Strategist Agent]
-    Strategist --> Competitor[Competitor Data]
-    Strategist --> Questions[Generated Questions]
+    Strategist[🧠 Strategist Agent<br/>(LLM Creativity)] --> Logic
     
-    ProductModel --> ProductAgent[Product Page Agent]
-    Competitor --> ProductAgent
+    Logic[⚖️ Logic Engine<br/>(Deterministic Tool)] --> Assembly
     
-    Questions --> FAQAgent[FAQ Agent]
+    Assembly[📝 Assembly Agent<br/>(Formatter)] --> End((End))
     
-    ProductAgent --> ProductJSON[Product Page JSON]
-    ProductAgent --> ComparisonJSON[Comparison Page JSON]
-    FAQAgent --> FAQJSON[FAQ Page JSON]
+    subgraph Shared Memory (AgentState)
+    Product_Model
+    Competitor_Model
+    Questions_List
+    Analysis_Data
+    end
 ```
 
 ## 3. Core Components
 
-### 3.1 Agents
-Agents are the high-level orchestrators that satisfy specific business requirements.
+### 3.1 Agents (Graph Nodes)
+Agents are the autonomous nodes in the graph, each responsible for a specific cognitive or functional task. They are defined in `src/agents.py`.
 
-| Agent | File | Responsibility | key Logic |
-|-------|------|----------------|-----------|
-| **Data Ingestion Agent** | `src/agents/ingestion_agent.py` | Parsers raw text into structured objects. | Simple line-by-line parsing to extract fields like Price, Ingredients, and Benefits. |
-| **Strategist Agent** | `src/agents/strategist_agent.py` | Generates synthetic content (Competitors & FAQs). | Uses slot-filling logic to generate 15+ categorized questions (Informational, Usage, Safety, Purchase) and constructs fictional competitor products. |
-| **Product Page Agent** | `src/agents/product_agent.py` | Assembles Product and Comparison pages. | Uses `math_utils` for price comparisons and `text_utils` for formatting usage instructions. Renders output using strict templates. |
-| **FAQ Agent** | `src/agents/faq_agent.py` | Organizes and renders the FAQ section. | Groups questions by category and formats them into the required JSON structure. |
+| Agent Node | Type | Responsibility | Key Logic |
+| :--- | :--- | :--- | :--- |
+| **Ingestion Agent** | **LLM Extraction** | Cleans messy text into strict `Product` objects. | Uses Pydantic extraction with Gemini to parse unstructured text into a validated schema. |
+| **Strategist Agent** | **LLM Creative** | Invents content that doesn't exist in the source. | Uses high-temperature LLM calls to **hallucinate** a fictional competitor and brainstorm user personas/questions. |
+| **Logic Engine** | **Deterministic Tool** | Grounds the AI with math and facts. | Calls pure Python functions (`calculate_price_delta`) to verify the AI's "Better Value" claims mathematically. |
+| **Assembly Agent** | **Formatter** | Compiles the final state into output files. | Aggregates the accumulated state and renders it into the final 3 JSON formats. |
 
-### 3.2 Logic Blocks ("Muscles")
-Reusable utility functions that perform specific data transformations. These are domain-agnostic where possible.
+### 3.2 Logic Tools ("Muscles")
+Reusable, deterministic utility functions that verify or transform data. Defined in `src/logic_tools.py`.
 
-- **`src/blocks/math_utils.py`**:
-    - `calculate_price_diff()`: Computes price difference and determines "Better Value" or "Premium Choice" verdict.
-    - `compare_ingredients()`: Finds common and unique ingredients between two products.
-- **`src/blocks/text_utils.py`**:
-    - `format_usage_instructions()`: Converts raw paragraph text into structured step-by-step lists.
-    - `generate_safety_warning()`: Generates advisory objects based on side effects.
-    - `parse_comma_list()`: Cleans and splits comma-separated strings.
+* **`calculate_price_delta(p1, p2)`**:
+    * *Role:* Computes the exact price difference between the Product and the AI-generated Competitor.
+    * *Output:* Returns metrics like `diff`, `is_cheaper`, and `percent_diff`.
+* **`extract_ingredient_overlap(list1, list2)`**:
+    * *Role:* Performs set operations to find common vs. unique ingredients.
+    * *Output:* Used to generate the "Advantage Summary" in the comparison page.
 
-### 3.3 Templates ("Skeleton")
-Classes that define the strict schema for the output JSON. They ensure consistency across all generated content.
+### 3.3 Data Models (Schema)
+The system uses **Pydantic** models to enforce strict types and ensure the LLM outputs machine-readable JSON. Defined in `src/models.py`.
 
-- **`src/templates/schemas.py`**:
-    - `ProductPageTemplate`: Structure for the main landing page (Hero, Details, Instructions, Safety).
-    - `ComparisonPageTemplate`: Structure for side-by-side product comparison.
-    - `FAQTemplate`: Structure for categorized Q&A lists.
-    - `BaseTemplate`: Adds standard metadata (version, generated_by) to all outputs.
+* **`Product`**:
+    * Fields: `name`, `price`, `currency`, `concentration`, `skin_type`, `ingredients`, `benefits`, `how_to_use`, `side_effects`.
+* **`Competitor` (Inherits Product)**:
+    * Adds: `reason_for_creation` (Why the AI chose this specific competitor strategy).
+* **`AgentState`**:
+    * The "Brain" of the graph. It holds the `raw_input`, `product` object, `competitor` object, and `questions` list as they are built up step-by-step.
 
-## 4. Data Models
+## 4. Directory Structure
+The project follows a flat, modular structure optimized for LLM agent workflows.
 
-The system uses Python `dataclasses` to ensure type safety and structured data passing between agents. Defined in `src/models.py`.
-
-- **`Product`**:
-    - Fields: `name`, `price`, `currency`, `concentration`, `skin_type`, `ingredients`, `benefits`, `how_to_use`, `side_effects`.
-- **`Question`**:
-    - Fields: `category`, `question_text`, `answer_text`.
-
-## 5. Directory Structure
-```
+```text
 src/
-├── agents/         # Orchestrators (Ingestion, Strategist, Product, FAQ)
-├── blocks/         # Reusable logic (Math, Text utils)
-├── templates/      # Output schemas (JSON structures)
-├── config.py       # Configuration and constants
-├── models.py       # Data classes (Product, Question)
-└── __init__.py
+├── agents.py       # The "Nodes" of the graph (Ingestion, Strategist, etc.)
+├── logic_tools.py  # The "Tools" (Math, Set operations)
+├── models.py       # The "Schema" (Pydantic models)
+├── __init__.py
 ```
+
+## 5. Technology Stack
+- **Orchestration**: LangGraph (State-of-the-art agent framework)
+- **LLM**: Google Gemini 1.5 (via langchain-google-genai)
+- **Validation**: Pydantic (Data integrity)
+- **Language**: Python 3.10+
