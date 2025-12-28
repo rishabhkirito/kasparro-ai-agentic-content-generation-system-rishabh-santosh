@@ -1,30 +1,101 @@
 {
   "title": "FAQ",
+  "count": 19,
   "items": [
     {
       "category": "Safety",
-      "question": "The side effects mention 'mild tingling for sensitive skin'. Is this a sign of an allergic reaction, and should I be concerned about it causing redness or irritation?",
-      "answer": "A mild tingling sensation can be a normal reaction as your skin adjusts to the potent Vitamin C. We strongly recommend performing a patch test first. If the tingling is severe, lasts more than a few minutes, or is accompanied by significant redness or burning, you should discontinue use."
-    },
-    {
-      "category": "Usage",
-      "question": "How should I incorporate this into my existing skincare routine? Should I use it in the morning or at night, and before or after my moisturizer?",
-      "answer": "For optimal results, apply 3-4 drops to clean, dry skin once daily in the morning. This allows the serum's antioxidant properties to protect your skin from environmental damage during the day. Always follow it with your moisturizer and a broad-spectrum sunscreen."
-    },
-    {
-      "category": "Value",
-      "question": "At a price of 699.0, what specific results justify the cost, and how long will one bottle typically last with daily use?",
-      "answer": "The price reflects a high-concentration formula designed to visibly brighten skin, reduce the appearance of dark spots, and improve overall texture. With the recommended daily application, one bottle is formulated to last approximately 2-3 months, making it a lasting investment in your skin's health."
+      "question": "Is GlowBoost Vitamin C Serum safe for all skin types?",
+      "answer": "Yes, GlowBoost is formulated to be safe for all skin types, including oily, dry, combination, and normal skin. However, individuals with very sensitive skin might experience a mild tingling sensation upon initial applications. This is typically normal as the skin adjusts. We recommend performing a patch test on a small area before your first full application."
     },
     {
       "category": "Safety",
-      "question": "I've heard Vitamin C serums can oxidize and change color. How will I know if the product has gone bad, and is it still safe to use if the color changes?",
-      "answer": "A slight change to a light yellow or champagne color is normal. However, if the serum turns dark orange or brown, it has oxidized and lost its effectiveness. It is not harmful, but we recommend replacing it to ensure you get the full benefits. Store it in a cool, dark place to prolong its shelf life."
+      "question": "Are there any side effects I should be aware of?",
+      "answer": "The most common feedback from users with sensitive skin is a mild, temporary tingling sensation. This is a normal reaction to the active Vitamin C and usually subsides as your skin acclimates. If you experience persistent irritation or redness, please discontinue use and consult a dermatologist."
+    },
+    {
+      "category": "Safety",
+      "question": "Can I use this serum while pregnant or breastfeeding?",
+      "answer": "While our formula is made with high-quality ingredients, we always recommend consulting with your doctor or a trusted healthcare professional before introducing any new skincare product into your routine during pregnancy or while breastfeeding."
+    },
+    {
+      "category": "Safety",
+      "question": "Is GlowBoost cruelty-free?",
+      "answer": "Absolutely. We are proud to confirm that GlowBoost Vitamin C Serum is 100% cruelty-free. We never test our products or their ingredients on animals."
+    },
+    {
+      "category": "Safety",
+      "question": "Does this product contain parabens, sulfates, or phthalates?",
+      "answer": "No. GlowBoost is formulated without parabens, sulfates, phthalates, or other harsh chemicals. We focus on clean, effective ingredients for your skin's health."
+    },
+    {
+      "category": "Usage",
+      "question": "How do I incorporate GlowBoost into my skincare routine?",
+      "answer": "For best results, use GlowBoost in the morning. After cleansing and toning, apply 3-4 drops to your dry face and neck. Gently pat it into the skin. Allow it to fully absorb before following with your moisturizer and a broad-spectrum sunscreen."
+    },
+    {
+      "category": "Usage",
+      "question": "How often should I use the serum?",
+      "answer": "We recommend using GlowBoost once daily, in the morning. This allows you to take full advantage of its antioxidant properties that help protect your skin from environmental stressors like UV rays and pollution throughout the day."
+    },
+    {
+      "category": "Usage",
+      "question": "Can I use GlowBoost with other active ingredients like Retinol or AHAs?",
+      "answer": "Yes, but it's best to alternate their use. We suggest using GlowBoost (Vitamin C) in your morning routine and other actives like Retinol or exfoliating acids (AHAs/BHAs) in your evening routine. Using them at different times of day minimizes the risk of irritation."
+    },
+    {
+      "category": "Usage",
+      "question": "Do I really need to wear sunscreen when using this serum?",
+      "answer": "Yes, this is a critical step! Vitamin C provides antioxidant protection but can also make your skin more sensitive to the sun. Using a broad-spectrum SPF 30 or higher every day is essential to protect your skin, prevent sun damage, and maximize the serum's benefits."
+    },
+    {
+      "category": "Usage",
+      "question": "How should I store the serum to maintain its potency?",
+      "answer": "To protect its stability, store your GlowBoost serum in a cool, dark place away from direct sunlight and heat, like a cabinet or drawer. Ensure the cap is screwed on tightly after each use to minimize exposure to air."
     },
     {
       "category": "Value",
-      "question": "How soon can I realistically expect to see a noticeable improvement in my skin's brightness and tone after starting to use GlowBoost?",
-      "answer": "While some users report an initial 'glow' within the first week, visible improvements in skin tone and the fading of dark spots typically require consistent daily use for at least 4-6 weeks. Results vary based on skin type and condition, so consistency is key."
+      "question": "How long will one bottle of GlowBoost last?",
+      "answer": "With the recommended daily usage of 3-4 drops, a standard 30ml (1 fl oz) bottle of GlowBoost should last approximately 2-3 months."
+    },
+    {
+      "category": "Value",
+      "question": "What results can I expect, and how soon will I see them?",
+      "answer": "With consistent daily use, most users notice a brighter, more radiant complexion within 2-4 weeks. After 8-12 weeks, you can expect to see a visible reduction in the appearance of fine lines, dark spots, and an overall more even skin tone."
+    },
+    {
+      "category": "Value",
+      "question": "What is the shelf life of the product once it's opened?",
+      "answer": "To ensure maximum potency and effectiveness, we recommend using GlowBoost within 6 months after opening."
+    },
+    {
+      "category": "Value",
+      "question": "Is there a satisfaction guarantee?",
+      "answer": "Yes! We stand by our product. If you're not completely satisfied with your purchase within 30 days, please contact our customer support team for information on our return and refund policy."
+    },
+    {
+      "category": "Science",
+      "question": "What are the main benefits of Vitamin C for the skin?",
+      "answer": "Vitamin C is a powerful antioxidant that helps to protect the skin from free radical damage, brighten overall skin tone, reduce the appearance of dark spots and hyperpigmentation, and stimulate collagen production to firm the skin and soften fine lines."
+    },
+    {
+      "category": "Science",
+      "question": "What type of Vitamin C is used in GlowBoost and why?",
+      "answer": "GlowBoost uses L-Ascorbic Acid, the purest and most researched form of Vitamin C. It is considered the gold standard in dermatology for its superior ability to penetrate the skin and deliver visible results."
+    },
+    {
+      "category": "Science",
+      "question": "What is the percentage of Vitamin C in the serum?",
+      "answer": "Our serum contains a potent 15% concentration of L-Ascorbic Acid. This level is clinically shown to be highly effective for antioxidant benefits and skin brightening while being well-tolerated by most skin types."
+    },
+    {
+      "category": "Science",
+      "question": "How does Vitamin C help with dark spots?",
+      "answer": "Vitamin C inhibits the enzyme tyrosinase, which is responsible for melanin production in the skin. By regulating pigment production, it helps to fade existing dark spots and prevent new ones from forming, leading to a more even complexion."
+    },
+    {
+      "category": "Science",
+      "question": "My serum has changed to a light yellow color. Is it still okay to use?",
+      "answer": "Yes. It is normal for a potent L-Ascorbic Acid serum to oxidize slightly and turn a pale yellow color over time. It is still safe and effective to use. However, if the serum turns dark orange or brown, it has oxidized significantly, lost its potency, and should be replaced."
     }
   ]
 }

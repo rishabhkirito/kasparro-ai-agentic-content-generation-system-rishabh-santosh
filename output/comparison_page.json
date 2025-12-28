@@ -1,10 +1,10 @@
 {
   "product_a": "GlowBoost Vitamin C Serum",
-  "product_b": "Aether C+E Ferulic Radiance Elixir",
+  "product_b": "Radiant C-Shield Serum",
   "analysis": {
-    "verdict": "Better Value",
-    "price_diff": -800.0,
-    "advantage_summary": "We have 1 unique ingredients.",
+    "verdict": "Premium Choice",
+    "price_diff": 50.0,
+    "advantage_summary": "Has 1 unique ingredients.",
     "common_ingredients": [
       "hyaluronic acid"
     ]

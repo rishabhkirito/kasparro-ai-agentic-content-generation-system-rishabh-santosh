@@ -1,10 +1,8 @@
-# src/models.py
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
 # --- 1. Product Models ---
 class Product(BaseModel):
-    """Internal model for the main product."""
     name: str = Field(description="Name of the product")
     price: float = Field(description="Numeric price value")
     currency: str = Field(description="Currency code like INR, USD")
@@ -16,8 +14,7 @@ class Product(BaseModel):
     side_effects: Optional[str] = Field(None, description="Side effects or warnings")
 
 class Competitor(Product):
-    """Model for the AI-generated competitor."""
-    reason_for_creation: str = Field(description="Why this competitor was created (e.g. 'Cheaper alternative')")
+    reason_for_creation: str = Field(description="Why this competitor was created")
 
 # --- 2. Content Models ---
 class Question(BaseModel):
@@ -31,14 +28,17 @@ class ComparisonData(BaseModel):
     advantage_summary: str
     common_ingredients: List[str]
 
-# --- 3. The State (The Shared Memory of the Graph) ---
+# --- 3. The State (The "Brain" of the Graph) ---
 class AgentState(BaseModel):
-    """The shared state passed between agents in the graph."""
     raw_input: str
     product: Optional[Product] = None
     competitor: Optional[Competitor] = None
     questions: List[Question] = []
     comparison_analysis: Optional[ComparisonData] = None
+    
+    # --- NEW: Feedback Loop State ---
+    critique: Optional[str] = None  # The Critic's notes
+    retry_count: int = 0            # Safety counter
     
     # Final JSON Outputs
     faq_json: str = ""

@@ -1,7 +1,5 @@
-# src/logic_tools.py
-
 def calculate_price_delta(p1_price: float, p2_price: float) -> dict:
-    """Mathematical logic block for price comparison."""
+    """Deterministic math logic for price comparison."""
     diff = p1_price - p2_price
     return {
         "diff": diff,
@@ -10,7 +8,7 @@ def calculate_price_delta(p1_price: float, p2_price: float) -> dict:
     }
 
 def extract_ingredient_overlap(list1: list, list2: list) -> dict:
-    """Set logic block for ingredient analysis."""
+    """Deterministic set logic for ingredient analysis."""
     s1 = set(x.lower().strip() for x in list1)
     s2 = set(x.lower().strip() for x in list2)
     return {
